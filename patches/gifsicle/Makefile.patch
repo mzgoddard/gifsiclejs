@@ -1,0 +1,11 @@
+--- src/Makefile
++++ src/Makefile
+@@ -179,7 +179,7 @@
+ ECHO_N = 
+ ECHO_T = 
+ EGREP = /usr/bin/grep -E
+-EXEEXT = 
++EXEEXT = .js
+ GIFWRITE_O = gifwrite.o
+ GREP = /usr/bin/grep
+ INSTALL = /usr/bin/install -c
