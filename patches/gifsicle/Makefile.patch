@@ -1,6 +1,18 @@
 --- src/Makefile
 +++ src/Makefile
-@@ -179,7 +179,7 @@
+@@ -169,17 +169,17 @@
+ AWK = gawk
+ CC = /Users/Zen/Projects/gifsiclejs/vendor/emscripten/emcc
+ CCDEPMODE = depmode=gcc3
+-CFLAGS = -g -O2
++CFLAGS = -O3
+ CPP = /Users/Zen/Projects/gifsiclejs/vendor/emscripten/emcc -E
+ CPPFLAGS = 
+ CYGPATH_W = echo
+-DEFS = -DHAVE_CONFIG_H
++DEFS = -DHAVE_CONFIG_H -DOUTPUT_GIF_TO_TERMINAL
+ DEPDIR = .deps
+ ECHO_C = \c
  ECHO_N = 
  ECHO_T = 
  EGREP = /usr/bin/grep -E
@@ -9,3 +21,12 @@
  GIFWRITE_O = gifwrite.o
  GREP = /usr/bin/grep
  INSTALL = /usr/bin/install -c
+@@ -187,7 +187,7 @@
+ INSTALL_PROGRAM = ${INSTALL}
+ INSTALL_SCRIPT = ${INSTALL}
+ INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
+-LDFLAGS = 
++LDFLAGS = --pre-js ../../../lib/pre_gifsicle.js
+ LIBOBJS = 
+ LIBS = 
+ LTLIBOBJS = 

@@ -14,8 +14,11 @@ vendor/gifsicle/src/Makefile:
 	@cd vendor/gifsicle && CC=$(CC) ./configure
 	@cd vendor/gifsicle && $(PATCH) <../../patches/gifsicle/Makefile.patch
 
-vendor/gifsicle/src/gifsicle.js: vendor/gifsicle/src/Makefile
+vendor/gifsicle/src/gifsicle.c.PATCHED:
 	@cd vendor/gifsicle && $(PATCH) <../../patches/gifsicle/gifsicle.c.patch
+	@echo PATCHED >vendor/gifsicle/src/gifsicle.c.PATCHED
+
+vendor/gifsicle/src/gifsicle.js: vendor/gifsicle/src/Makefile vendor/gifsicle/src/gifsicle.c.PATCHED
 	@cd vendor/gifsicle/src && $(MAKE) gifsicle.js
 
 clean:

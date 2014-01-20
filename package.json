@@ -1,0 +1,38 @@
+{
+  "name": "gifsiclejs",
+  "version": "0.0.0",
+  "description": "Use gifsicle to work with and on animated gifs.",
+  "main": "index.js",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mzgoddard/gifsiclejs.git"
+  },
+  "keywords": [
+    "gif",
+    "emscripten"
+  ],
+  "author": "Michael \"Z\" Goddard",
+  "license": "GPL2",
+  "bugs": {
+    "url": "https://github.com/mzgoddard/gifsiclejs/issues"
+  },
+  "homepage": "https://github.com/mzgoddard/gifsiclejs",
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "webpack": "~1.0.0-beta6",
+    "webpack-dev-server": "~1.2.0",
+    "grunt-webpack": "~1.0.3",
+    "grunt-contrib-jshint": "~0.8.0",
+    "grunt-contrib-commands": "~0.1.6",
+    "lodash": "~2.4.1",
+    "grunt-shell": "~0.6.3"
+  },
+  "devDependencies": {
+    "chai": "~1.8.1",
+    "mocha": "~1.17.0",
+    "grunt-testem": "~0.5.1"
+  }
+}
