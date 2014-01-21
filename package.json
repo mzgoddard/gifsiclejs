@@ -28,11 +28,15 @@
     "grunt-contrib-jshint": "~0.8.0",
     "grunt-contrib-commands": "~0.1.6",
     "lodash": "~2.4.1",
-    "grunt-shell": "~0.6.3"
+    "grunt-shell": "~0.6.3",
+    "underscore": "~1.5.2"
   },
   "devDependencies": {
     "chai": "~1.8.1",
     "mocha": "~1.17.0",
-    "grunt-testem": "~0.5.1"
+    "grunt-testem": "~0.5.1",
+    "crc32": "~0.2.2",
+    "when": "~2.7.1",
+    "gif.js": "~0.1.5"
   }
 }

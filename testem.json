@@ -1,0 +1,18 @@
+{
+  "framework": "mochi",
+  "src_files": [ "Gruntfile.js", "lib/*.js", "test/index.js", "test/test*.js" ],
+  "serve_files": [
+    "dist/*",
+    "test/**/*"
+  ],
+  "test_page": "test/index.html",
+  "before_tests": "grunt",
+  "launchers": {
+    "Mocha": {
+      "command": "node_modules/.bin/mocha -R tap -u qunit test/test*.js",
+      "protocol": "tap"
+    }
+  },
+  "launch_in_ci": [ "chrome", "firefox", "Opera" ],
+  "launch_in_dev": [ "chrome" ]
+}

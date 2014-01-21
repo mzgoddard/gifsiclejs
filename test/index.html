@@ -1,0 +1,23 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link rel="stylesheet" href="/node_modules/mocha/mocha.css" />
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="/node_modules/chai/chai.js"></script>
+  <script src="/node_modules/mocha/mocha.js"></script>
+  <script src="/testem.js"></script>
+  <script src="/node_modules/crc32/lib/crc32.js"></script>
+  <!-- Test with built diskette file. -->
+  <script src="/dist/gifsicle.client.js"></script>
+  <script>mocha.setup('qunit')</script>
+  <script src="dist/test.js"></script>
+  <script>
+    mocha.checkLeaks();
+    mocha.globals(['jQuery', '$', 'gifsicle']);
+    mocha.run();
+  </script>
+</body>
+</html>
