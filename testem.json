@@ -1,6 +1,6 @@
 {
   "framework": "mochi",
-  "src_files": [ "Gruntfile.js", "lib/*.js", "test/index.js", "test/test*.js" ],
+  "src_files": [ "Gruntfile.js", "lib/*.js", "test/*.js" ],
   "serve_files": [
     "dist/*",
     "test/**/*"

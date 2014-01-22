@@ -5,7 +5,7 @@
  CC = /Users/Zen/Projects/gifsiclejs/vendor/emscripten/emcc
  CCDEPMODE = depmode=gcc3
 -CFLAGS = -g -O2
-+CFLAGS = -g -O2
++CFLAGS = -O2
  CPP = /Users/Zen/Projects/gifsiclejs/vendor/emscripten/emcc -E
  CPPFLAGS = 
  CYGPATH_W = echo
@@ -26,7 +26,7 @@
  INSTALL_SCRIPT = ${INSTALL}
  INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
 -LDFLAGS = 
-+LDFLAGS = -g4 --pre-js ../../../lib/pre_gifsicle.js --post-js ../../../lib/post_gifsicle.js
++LDFLAGS = --pre-js ../../../lib/pre_gifsicle.js --post-js ../../../lib/post_gifsicle.js
  LIBOBJS = 
  LIBS = 
  LTLIBOBJS = 
