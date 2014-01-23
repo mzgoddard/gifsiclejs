@@ -14,3 +14,19 @@ test('black/white', function(done) {
     .yield().then(done)
     .otherwise(done);
 });
+
+test('black/white loop', function(done) {
+  var gif = gifsicle(gifsicle.worker('../dist/'));
+  var whenGif = utils.whenGifWithGif(gif);
+
+  gif.option({'loop': true});
+
+  when.all([
+    utils.whenImage('image/black.gif').then(utils.assertImageSize(256, 256)),
+    utils.whenImage('image/white.gif').then(utils.assertImageSize(256, 256))
+  ])
+    .then(whenGif)
+    .then(utils.assertBlobSize(767))
+    .yield().then(done)
+    .otherwise(done);
+});
