@@ -68,3 +68,21 @@ utils.assertBlobSize = function(size) {
     return blob;
   };
 };
+
+utils.assertBlobCRC32 = function(hash) {
+  return function(blob) {
+    assert.ok(blob instanceof Blob);
+
+    return when.promise(function(resolve, reject) {
+      var reader = new FileReader();
+      reader.onloadend = resolve;
+      reader.onerror = reject;
+      reader.readAsArrayBuffer(blob);
+    })
+      .then(function(e) {
+        var reader = e.target;
+        var array = new Uint8Array(reader.result)
+        assert.equal(crc32.direct(array).toString(16), hash);
+      });
+  }
+}

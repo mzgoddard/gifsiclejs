@@ -11,6 +11,7 @@ test('black/white', function(done) {
   ])
     .then(utils.whenGif)
     .then(utils.assertBlobSize(748))
+    .then(utils.assertBlobCRC32('5bd65508'))
     .yield().then(done)
     .otherwise(done);
 });
@@ -27,6 +28,7 @@ test('black/white loop', function(done) {
   ])
     .then(whenGif)
     .then(utils.assertBlobSize(767))
+    .then(utils.assertBlobCRC32('7f3fe48d'))
     .yield().then(done)
     .otherwise(done);
 });
