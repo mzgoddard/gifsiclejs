@@ -55,6 +55,31 @@ test('reuse gifsicle', function(done) {
   .yield(utils.whenImage('image/white.gif'))
     .then(whenGif)
     .then(utils.assertBlobSize(384))
+  .yield(utils.whenImage('image/rainbow.gif'))
+    .then(whenGif)
+    .then(utils.assertBlobSize(9504))
+  .yield(utils.whenImage('image/noise.gif'))
+    .then(whenGif)
+    .then(utils.assertBlobSize(23085))
+    .yield().then(done)
+    .otherwise(done);
+});
+
+test('png', function(done) {
+  var whenGif = utils.whenGifWithGif(gifsicle(gifsicle.worker('../dist/')));
+
+  utils.whenImage('image/black.png')
+    .then(whenGif)
+    .then(utils.assertBlobSize(411))
+  utils.whenImage('image/white.png')
+    .then(whenGif)
+    .then(utils.assertBlobSize(411))
+  utils.whenImage('image/rainbow.png')
+    .then(whenGif)
+    .then(utils.assertBlobSize(9531))
+  utils.whenImage('image/noise.png')
+    .then(whenGif)
+    .then(utils.assertBlobSize(23083))
     .yield().then(done)
     .otherwise(done);
 });
