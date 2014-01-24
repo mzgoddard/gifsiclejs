@@ -83,6 +83,7 @@ utils.assertBlobCRC32 = function(hash) {
         var reader = e.target;
         var array = new Uint8Array(reader.result)
         assert.equal(crc32.direct(array).toString(16), hash);
-      });
+      })
+      .yield(blob);
   }
 }
