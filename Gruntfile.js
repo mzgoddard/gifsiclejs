@@ -16,9 +16,7 @@ module.exports = function(grunt) {
         options: {
           callback: function(err, stdout, stderr, fn) {
             grunt.log.writeln('Submodules up to date.');
-            // The current version of grunt-shell calls the async callback no
-            // matter what and grunt doesn't like it being called twice.
-            // fn(err);
+            fn(err);
           }
         },
         command: 'git submodule init && git submodule update'
@@ -28,9 +26,7 @@ module.exports = function(grunt) {
         options: {
           stdout: true,
           callback: function(err, stdout, stderr, fn) {
-            // The current version of grunt-shell calls the async callback no
-            // matter what and grunt doesn't like it being called twice.
-            // fn(err);
+            fn(err);
           }
         },
         command: 'make'
